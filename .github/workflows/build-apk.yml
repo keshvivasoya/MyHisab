@@ -19,7 +19,9 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
-      - uses: android-actions/setup-android@v3
+      - name: Prepare Android SDK
+        run: |
+          sdkmanager "platforms;android-35" "build-tools;35.0.0"
 
       - name: Create Android app
         run: |
